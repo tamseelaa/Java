@@ -18,4 +18,4 @@ public class Calculator {
         System.out.println("The multiple of the numbers is " + first * second * third);
         System.out.printf("The average of the numbers is %.13f\n" , average);
     }
-}////
+}

@@ -86,7 +86,7 @@ public class Car {
             return false;
         }
 
-        // Try to reach the target speed
+        //Try to reach the target speed
         while (speed < cruiseTarget && gasolineLevel > 0) {
             accelerate();
             System.out.println("Accelerating...       Current speed: " + speed + " km/h");

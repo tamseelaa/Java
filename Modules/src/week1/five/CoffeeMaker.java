@@ -5,13 +5,13 @@ public class CoffeeMaker {
     private String coffeeType;
     private int coffeeAmount;
 
-    private static final int MIN_AMOUNT = 10;
-    private static final int MAX_AMOUNT = 80;
+    private static final int minAmount = 10;
+    private static final int maxAmount = 80;
 
     public CoffeeMaker() {
         this.isOn = false;
-        this.coffeeType = "normal"; // default
-        this.coffeeAmount = 10;     // default
+        this.coffeeType = "normal";
+        this.coffeeAmount = 10;
     }
 
     // turn on/off
@@ -27,7 +27,6 @@ public class CoffeeMaker {
         return isOn;
     }
 
-    // set coffee type
     public void setCoffeeType(String type) {
         if (isOn) {
             if (type.equalsIgnoreCase("normal") || type.equalsIgnoreCase("espresso")) {
@@ -40,10 +39,9 @@ public class CoffeeMaker {
         return coffeeType;
     }
 
-    // set coffee amount
     public void setCoffeeAmount(int amount) {
         if (isOn) {
-            if (amount >= MIN_AMOUNT && amount <= MAX_AMOUNT) {
+            if (amount >= minAmount && amount <= maxAmount) {
                 coffeeAmount = amount;
             }
         }

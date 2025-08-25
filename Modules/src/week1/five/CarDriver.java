@@ -12,10 +12,10 @@ public class CarDriver {
             System.out.println(myCar.getTypeName() + ": speed is " + myCar.getSpeed() + " km/h");
         }
 
-        // === Cruise Control Tests ===
+        // === Control Tests ===
         System.out.println("\n\n\n--- Testing Cruise Control ---");
 
-// Case 1: Valid target (reachable)
+        // 1: Valid target (reachable)
         myCar.setCruiseTarget(120);   // bigger than current 60
         boolean cruiseActivated = myCar.turnOnCruiseControl();
         if (cruiseActivated) {
@@ -24,13 +24,13 @@ public class CarDriver {
             System.out.println("Failed to activate cruise control.");
         }
 
-// Case 2: Unreachable target due to low fuel
+        // 2: Unreachable target due to low fuel
         Car lowFuelCar = new Car("Nissan Micra");
         lowFuelCar.fillTank();
         lowFuelCar.accelerate();   // burn a little fuel
         lowFuelCar.accelerate();
         lowFuelCar.accelerate();
-        lowFuelCar.accelerate();   // maybe ~96% fuel left
+        lowFuelCar.accelerate();
 
         lowFuelCar.setCruiseTarget(200);  // very high target
         if (!lowFuelCar.turnOnCruiseControl()) {

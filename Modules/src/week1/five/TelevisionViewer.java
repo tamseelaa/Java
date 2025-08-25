@@ -1,5 +1,5 @@
 package week1.five;
-/*
+
 public class TelevisionViewer {
     public static void main(String[] args) {
         Television myTV = new Television();
@@ -25,4 +25,4 @@ public class TelevisionViewer {
             System.out.println("Falling asleep");
         }
     }
-}*/
+}

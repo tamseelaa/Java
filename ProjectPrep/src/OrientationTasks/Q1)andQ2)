@@ -1,0 +1,17 @@
+Q:1) There are different situations where one need simulations like (vehicles creation, traffic lights systems, aircraft making, for new technologies creation).
+
+why: e.g (traffic lights system helps the drivers and traffic accumulate time to lower accidents rates. simulation take in account to many more variabilities,
+ like rush hours and incidents, it helps in creation of environment where one can test the system without physical damage and analyze and improve their system).
+
+
+
+Q2:) Elements like variabilities, complexity and interconnection can be test and improve through simulation. I will associate Special Vehicle example to identify the elements.
+
+Variability elements: production times, supply chain, workforce skills and their availablity.
+
+Complexity elements: Product manufacturing, Resource dependency, safety statndards or regulations to follow.
+
+Interconnectedness elements: 1: Supply chain - Production - Resources
+
+2: design - manufacturing 3: testing - production.
+

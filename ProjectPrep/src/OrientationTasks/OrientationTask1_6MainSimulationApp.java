@@ -1,7 +1,7 @@
-package W1;
+package OrientationTasks;
 import java.util.Scanner;
 
-public class MainSimulationApp {
+public class OrientationTask1_6MainSimulationApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -14,10 +14,10 @@ public class MainSimulationApp {
             String choice = sc.nextLine().trim();
             switch (choice) {
                 case "1":
-                    OrientationTask2_Queue.main(new String[]{}); // run CLI
+                    OrientationTask1_4Queue.main(new String[]{});
                     break;
                 case "2":
-                    ServiceSimulation.main(new String[]{}); // run service simulation
+                    OrientationTask1_6ServiceSimulation.main(new String[]{});
                     break;
                 case "0":
                     System.out.println("Exiting MainSimulationApp.");

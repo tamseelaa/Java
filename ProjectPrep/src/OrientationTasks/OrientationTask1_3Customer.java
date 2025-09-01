@@ -1,6 +1,6 @@
-package W1;
+package OrientationTasks;
 
-public class Customer {
+public class OrientationTask1_3Customer {
     private static int nextId = 1;
     private final int id;
     private long startTime;
@@ -9,9 +9,9 @@ public class Customer {
     private Long serviceEndTime;
     private Long serviceDurationNs;
 
-    public Customer() {this.id = nextId++;}
+    public OrientationTask1_3Customer() {this.id = nextId++;}
 
-    public Customer(long startTime) {
+    public OrientationTask1_3Customer(long startTime) {
         this();
         this.startTime = startTime;}
 

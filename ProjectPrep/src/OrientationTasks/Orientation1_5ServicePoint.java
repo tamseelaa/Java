@@ -1,22 +1,22 @@
-package W1;
+package OrientationTasks;
 
 import java.util.LinkedList;
 
-public class ServicePoint {
-    private final LinkedList<Customer> queue = new LinkedList<>();
+public class Orientation1_5ServicePoint {
+    private final LinkedList<OrientationTask1_3Customer> queue = new LinkedList<>();
     private final String name;
 
-    public ServicePoint(String name) {
+    public Orientation1_5ServicePoint(String name) {
         this.name = name;
     }
 
-    public void addToQueue(Customer c) {
+    public void addToQueue(OrientationTask1_3Customer c) {
         c.setStartTime(System.nanoTime());
-        queue.addFirst(c); // FIFO via addFirst/removeLast
+        queue.addFirst(c);
         System.out.println("[" + name + "] Enqueued customer " + c.getId() + ". Queue size = " + queue.size());
     }
 
-    public Customer removeFromQueue() {
+    public OrientationTask1_3Customer removeFromQueue() {
         if (queue.isEmpty()) return null;
         return queue.removeLast();
     }
@@ -27,7 +27,7 @@ public class ServicePoint {
         long totalServiceNs = 0;
 
         while (!queue.isEmpty()) {
-            Customer c = removeFromQueue();
+            OrientationTask1_3Customer c = removeFromQueue();
             if (c == null) break;
 
             long serviceStart = System.nanoTime();

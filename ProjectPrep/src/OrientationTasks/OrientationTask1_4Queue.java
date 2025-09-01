@@ -1,15 +1,14 @@
-package W1;
+package OrientationTasks;
 
 import java.util.LinkedList;
 import java.util.Scanner;
 
 
-public class OrientationTask2_Queue {
+public class OrientationTask1_4Queue {
     public static void main(String[] args) {
-        LinkedList<Customer> queue = new LinkedList<>();
+        LinkedList<OrientationTask1_3Customer> queue = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Commands: (e)nqueue, (d)equeue, (p)rint, (q)uit");
-
 
         while (true) {
             System.out.print("> ");
@@ -17,7 +16,7 @@ public class OrientationTask2_Queue {
             switch (cmd) {
                 case "e":
                 case "enqueue": {
-                    Customer c = new Customer();
+                    OrientationTask1_3Customer c = new OrientationTask1_3Customer();
                     c.setStartTime(System.nanoTime()); // enqueue timestamp
                     queue.addFirst(c); // FIFO with addFirst/removeLast
                     System.out.println("Enqueued customer " + c.getId() + ". Queue size = " + queue.size());
@@ -29,7 +28,7 @@ public class OrientationTask2_Queue {
                         System.out.println("Queue is empty.");
                         break;
                     }
-                    Customer c = queue.removeLast(); // oldest leaves first
+                    OrientationTask1_3Customer c = queue.removeLast(); // oldest leaves first
                     c.setEndTime(System.nanoTime());
                     long waitedNs = c.timeSpent();
                     System.out.println("Dequeued customer " + c.getId() +
@@ -39,7 +38,6 @@ public class OrientationTask2_Queue {
                 case "p":
                 case "print": {
                     System.out.print("Queue (oldest → newest): ");
-// removeLast takes oldest, so iterate reversed view
                     if (queue.isEmpty()) {
                         System.out.println("<empty>");
                     } else {
@@ -60,8 +58,6 @@ public class OrientationTask2_Queue {
             }
         }
     }
-
-
     private static long toMillis(long ns) {
         return java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(ns);
     }

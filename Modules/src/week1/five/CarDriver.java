@@ -32,7 +32,7 @@ public class CarDriver {
         lowFuelCar.accelerate();
         lowFuelCar.accelerate();
 
-        lowFuelCar.setCruiseTarget(200);
+        lowFuelCar.setCruiseTarget(80);
         if (!lowFuelCar.turnOnCruiseControl()) {
             System.out.println("Cruise control failed: could not reach " + lowFuelCar.getCruiseTarget() + " km/h.");
         }

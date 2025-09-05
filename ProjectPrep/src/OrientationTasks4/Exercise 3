@@ -1,0 +1,14 @@
+Two airport systems with 3–4 service points
+System 1: Small regional airport
+
+Check-in → Security → Boarding → Baggage claim
+
+System 2: Medium international airport
+
+Check-in → Security → (Immigration / Duty-Free) → Boarding → Baggage claim
+
++------------+
+| Security   |
++------------+
+Queue is created where passengers are waiting.
+Server → [Busy/Idle]

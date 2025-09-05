@@ -1,0 +1,31 @@
+Airport with check-in, security, boarding, baggage claim.
+
+Performance measures:
+
+Throughput – Number of passengers processed per unit time.
+
+Example: 500 passengers checked in per hour.
+
+Utilisation – Fraction of time a service point is busy.
+
+Example: Security checkpoint busy 85% of the time; check-in counters 70%.
+
+Waiting Time – Time passengers wait before service.
+
+Example: Average wait at security: 20 minutes.
+
+Service Time – Time spent at the service point.
+
+Example: Check-in takes 5 minutes per passenger; security takes 10 minutes.
+
+Queue Length – Number of passengers waiting.
+
+Example: Average 30 people waiting at boarding gates.
+
+Idle Time – Time service points are not serving customers.
+
+Example: Baggage claim carousel idle 15% of operational time.
+
+System Time / Lead Time – Total time passengers spend from arrival at the airport to leaving after baggage claim.
+
+Example: Average total airport time: 90 minut

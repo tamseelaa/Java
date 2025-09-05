@@ -1,4 +1,4 @@
-package OrientationTasks4;
+package OrientationTasks3;
 
 public class Clock {
     private static Clock instance;

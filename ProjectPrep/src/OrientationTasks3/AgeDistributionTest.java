@@ -1,4 +1,4 @@
-package OrientationTasks4;
+package OrientationTasks3;
 import java.util.*;
 
 public class AgeDistributionTest {

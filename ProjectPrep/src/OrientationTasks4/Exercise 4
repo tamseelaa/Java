@@ -1,0 +1,20 @@
+initialize airport system
+initialize event list (A-phase: arrivals)
+
+while simulation time < end time:
+    get next event from event list
+    advance simulation clock to event time
+
+    if event is arrival (A-phase):
+        process passenger arrival
+        schedule service start if service point free
+
+    if event is service start (B-phase):
+        start service (check-in, security, boarding)
+        schedule service end
+
+    if event is service end (C-phase):
+        finish service
+        update statistics (waiting time, utilisation)
+        check if queue has waiting passengers
+        schedule next service start if queue not empty

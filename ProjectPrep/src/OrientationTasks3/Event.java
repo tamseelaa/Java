@@ -1,4 +1,4 @@
-package OrientationTasks4;
+package OrientationTasks3;
 
 class Event {
     String type;

@@ -1,0 +1,15 @@
+Categories for maintaining/updating/computing performance measures
+
+Per service point:
+
+Check-in counters, security, boarding gates, baggage claim.
+
+Track utilisation, idle time, queue length.
+
+Per passenger:
+
+Track waiting time, service time, total airport time.
+
+Event-based / Simulation-based:
+
+Update measures at events: passenger arrival, service start, service end.

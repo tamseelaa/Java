@@ -1,0 +1,34 @@
+Simulator classes & coding phases for airport
+
+Simulator classes:
+Passenger, ServicePoint, Event, Simulator, Statistics.
+
+Phases:
+
+A-phase coding (Arrival events):
+
+Passenger enters the airport system.
+
+Example: Event arrival = new Event(time, passenger, ARRIVAL);
+
+B-phase coding (Service start events):
+
+Passenger starts service at check-in, security, boarding.
+
+Example: Event serviceStart = new Event(time, passenger, SERVICE_START);
+
+C-phase coding (Service end events):
+
+Passenger finishes service; update queues and stats.
+
+Example: Event serviceEnd = new Event(time, passenger, SERVICE_END);
+
+Pseudocode:
+
+class Event {
+    type (ARRIVAL, SERVICE_START, SERVICE_END)
+    time
+    passenger
+    servicePoint
+}
+

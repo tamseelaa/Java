@@ -1,0 +1,36 @@
+Suppose you know the age distribution of students in your group, for example:
+
+Age	Proportion (%)
+20	30%
+21	40%
+22	20%
+23	10%
+
+You want to generate 1000 ages so the sample matches this distribution.
+
+Algorithm (inverse transform style with discrete distribution):
+
+Input: table of (age, probability).
+Example: (20 → 0.3, 21 → 0.4, 22 → 0.2, 23 → 0.1).
+
+Build cumulative distribution function (CDF):
+
+20 → [0.0, 0.3)
+
+21 → [0.3, 0.7)
+
+22 → [0.7, 0.9)
+
+23 → [0.9, 1.0)
+
+Generate 1000 random numbers (uniform [0,1)):
+
+For each random number r, find which interval it falls into.
+
+Assign the corresponding age.
+
+Store the 1000 values in an array.
+
+Compile statistics (counts per age) and compare them to expected percentages.
+
+This algorithm is direct and ready for coding.

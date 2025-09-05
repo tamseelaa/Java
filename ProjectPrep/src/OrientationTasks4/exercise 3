@@ -1,0 +1,7 @@
+A Singleton class ensures only one instance exists.
+
+To enforce this, the constructor is declared private, preventing other classes from calling new.
+
+The only way to obtain the instance is via a static factory method (getInstance()), which checks whether an instance already exists.
+
+If you could call new, you’d break the singleton rule and multiple objects would exist.

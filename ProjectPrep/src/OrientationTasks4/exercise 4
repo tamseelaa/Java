@@ -1,0 +1,9 @@
+Normal distribution: Used for natural variations, e.g., service times in a supermarket (some faster, some slower).
+
+Exponential distribution: Models inter-arrival times of customers (Poisson arrivals).
+
+Uniform distribution: Used when every outcome in a range is equally likely (e.g., random seat assignment).
+
+Bernoulli / Binomial: Used when modeling yes/no events, e.g., probability of a machine failing.
+
+Poisson distribution: Counts number of arrivals in a fixed interval (e.g., number of calls per hour).

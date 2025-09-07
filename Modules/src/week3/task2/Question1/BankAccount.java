@@ -1,4 +1,4 @@
-package week3.task2.Library.Question1;
+package week3.task2.Question1;
 
 public class BankAccount {
     private static int totalAccounts = 0;

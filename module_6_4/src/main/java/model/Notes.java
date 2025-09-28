@@ -18,7 +18,7 @@ public class Notes {
 
     @Override
     public String toString() {
-        // show title in the ListView; keep content out to avoid clutter
+        // show title in the ListView
         return (title == null || title.isEmpty()) ? "(no title)" : title;
     }
 }

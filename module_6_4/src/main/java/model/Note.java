@@ -1,10 +1,10 @@
 package model;
 
-public class Notes {
+public class Note {
     private String title;
     private String content;
 
-    public Notes(String title, String content) {
+    public Note(String title, String content) {
         this.title = title;
         this.content = content;
     }

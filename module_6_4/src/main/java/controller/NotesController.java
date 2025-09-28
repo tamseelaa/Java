@@ -1,7 +1,7 @@
 package controller;
 
 import model.Notebook;
-import model.Notes;
+import model.Note;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -13,7 +13,7 @@ public class NotesController {
     private TextArea contentArea;
 
     @FXML
-    private ListView<Notes> noteList;
+    private ListView<Note> noteList;
 
     private Notebook notebook;
 
@@ -33,7 +33,7 @@ public class NotesController {
             return;
         }
 
-        Notes note = new Notes(title, content);
+        Note note = new Note(title, content);
         notebook.addNote(note);
 
         // manually update ListView
@@ -46,7 +46,7 @@ public class NotesController {
 
     @FXML
     private void handleDelete() {
-        Notes selected = noteList.getSelectionModel().getSelectedItem();
+        Note selected = noteList.getSelectionModel().getSelectedItem();
         if (selected != null) {
             notebook.getNotes().remove(selected); // remove from model
             noteList.getItems().remove(selected); // remove from view

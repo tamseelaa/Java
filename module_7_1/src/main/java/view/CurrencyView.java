@@ -1,55 +1,55 @@
+package view;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import dao.CurrencyDao;
+import controller.CurrencyController;
 
 public class CurrencyView extends Application {
     @Override
     public void start(Stage stage) {
-        CurrencyController controller = new CurrencyController();
+        CurrencyDao dao = new CurrencyDao();
+        CurrencyController controller = new CurrencyController(dao);
 
-        // Labels
         Label amountLabel = new Label("Amount:");
         Label fromLabel = new Label("From Currency:");
         Label toLabel = new Label("To Currency:");
         Label resultLabel = new Label("Result:");
 
-        // Input + output fields
         TextField amountField = new TextField();
         TextField resultField = new TextField();
         resultField.setEditable(false);
 
-        // Currency selectors
         ComboBox<String> fromBox = new ComboBox<>();
-        fromBox.getItems().addAll(Currency.getAllCurrencies().keySet());
-        fromBox.setValue("EUR");
-
         ComboBox<String> toBox = new ComboBox<>();
-        toBox.getItems().addAll(Currency.getAllCurrencies().keySet());
-        toBox.setValue("USD");
 
-        // Convert button
+        try {
+            fromBox.getItems().addAll(dao.getAllCurrencies().keySet());
+            toBox.getItems().addAll(dao.getAllCurrencies().keySet());
+            fromBox.setValue("EUR");
+            toBox.setValue("USD");
+        } catch (Exception e) {
+            showError("Database unavailable: " + e.getMessage());
+        }
+
         Button convertButton = new Button("Convert");
 
-        // Event handling
         convertButton.setOnAction(e -> {
             try {
                 double amount = Double.parseDouble(amountField.getText());
                 double result = controller.convert(fromBox.getValue(), toBox.getValue(), amount);
                 resultField.setText(String.format("%.2f", result));
             } catch (NumberFormatException ex) {
-                resultField.setText("Invalid input.");
+                resultField.setText("Invalid number.");
             } catch (Exception ex) {
-                resultField.setText("Error: " + ex.getMessage());
+                showError("Error: " + ex.getMessage());
             }
         });
 
-        // Layout
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
@@ -60,11 +60,15 @@ public class CurrencyView extends Application {
         grid.add(resultLabel, 0, 3); grid.add(resultField, 1, 3);
         grid.add(convertButton, 1, 4);
 
-        // Scene
         Scene scene = new Scene(grid, 350, 220);
-        stage.setTitle("Currency Converter");
+        stage.setTitle("Currency Converter (DB-backed)");
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR, message, ButtonType.OK);
+        alert.showAndWait();
     }
 
     public static void main(String[] args) {
